@@ -339,7 +339,8 @@
             "condition": "[equals(parameters('deployIntoExistingVnet'), 'No')]",
             "name": "SetupDefaultUDR",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2015-01-01",
+            "resourceGroup": "[parameters('virtualNetworkExistingRGName')]",
+            "apiVersion": "2019-10-01",
             "dependsOn": [
                 "Microsoft.Resources/deployments/SetupNSG"
             ],
