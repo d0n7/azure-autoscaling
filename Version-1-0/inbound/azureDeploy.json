@@ -40,6 +40,13 @@
                 "description": "Virtual Network Name of the VM-Series firewall VM Scale Set."
             }
         },
+        "virtualNetworkExistingRGName": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+                "description": "Name of resource group of existing VNET"
+            }
+        },
         "virtualNetworkAddressPrefix": {
             "type": "string",
             "defaultValue": "192.168.0.0/21",
