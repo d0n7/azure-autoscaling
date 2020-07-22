@@ -15,7 +15,7 @@
         },
         "vnetResourceGrpName": {
             "type": "string",
-            "defaultValue": "[parameters('virtualNetworkExistingRGName')]"",
+            "defaultValue": "[parameters('virtualNetworkExistingRGName')]",
             "metadata": {
                 "description": "VNET resource group name"
             }
