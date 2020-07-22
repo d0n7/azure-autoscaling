@@ -15,7 +15,7 @@
         },
         "vnetResourceGrpName": {
             "type": "string",
-            "defaultValue": "[parameters('virtualNetworkExistingRGName')]",
+            "defaultValue": "pstaj-autoscale-transit",
             "metadata": {
                 "description": "VNET resource group name"
             }
