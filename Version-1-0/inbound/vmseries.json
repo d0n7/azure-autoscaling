@@ -132,6 +132,13 @@
                 "description": "App Insights where custom metrics is hosted"
             }
         },
+        "virtualNetworkExistingRGName": {
+            "type": "string",
+            "defaultValue": "resourceGroup().name",
+            "metadata": {
+                "description": "Name of resource group of existing VNET"
+            }
+        },
         "autoScaleMetric": {
              "type": "string",
              "allowedValues": [
@@ -280,7 +287,7 @@
                                     "name": "[variables('ipConfigNamemgmt')]",
                                     "properties": {
                                         "subnet": {
-                                            "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'), '/subnets/', parameters('subnetNameMgmt'))]"
+                                            "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', parameters('virtualNetworkExistingRGName'), '/providers/Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'), '/subnets/', parameters('subnetNameMgmt'))]"
                                         },
                                         "publicIPAddressConfiguration": {
                                             "name": "pavm_pip",
