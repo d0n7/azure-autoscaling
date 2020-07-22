@@ -358,6 +358,7 @@
         {
             "name": "SetupVNET",
             "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "[parameters('virtualNetworkExistingRGName')]",
             "apiVersion": "2015-01-01",
             "dependsOn": [
                 "Microsoft.Resources/deployments/SetupNSG",

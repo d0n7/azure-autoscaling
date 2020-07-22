@@ -169,7 +169,6 @@
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "name": "[concat(variables('vnetname'), '/', parameters('subnet0Name'))]",
             "location": "[variables('location')]",
-            "resourceGroup": "[variables('rgname')]",
             "properties": {
                 "addressPrefix": "[if(equals(parameters('subnet0Prefix'), 'None'), json('null'), parameters('subnet0Prefix'))]",
                 "networkSecurityGroup": {
@@ -183,8 +182,6 @@
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "name": "[concat(variables('vnetname'), '/', parameters('subnet1Name'))]",
             "location": "[variables('location')]",
-            "resourceGroup": "[variables('rgname')]",
-
             "properties": {
                 "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet1Prefix'))]"
             },
@@ -197,7 +194,6 @@
             "apiVersion": "2018-04-01",
             "type": "Microsoft.Network/virtualNetworks/subnets",
             "name": "[concat(variables('vnetname'), '/', parameters('subnet2Name'))]",
-            "resourceGroup": "[variables('rgname')]",
             "location": "[variables('location')]",
             "properties": {
                 "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet2Prefix'))]"
