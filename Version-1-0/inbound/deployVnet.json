@@ -97,7 +97,7 @@
     },
     "variables": {
         "location": "[resourceGroup().location]",
-        "rgname": "[resourceGroup().id]",
+        "rgname": "pstaj-autoscale-transit",
         "vnetname": "[parameters('virtualNetworkName')]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('vnetname'))]",
         "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
