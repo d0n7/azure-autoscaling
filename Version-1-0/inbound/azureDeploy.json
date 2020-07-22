@@ -550,7 +550,7 @@
                     "vmSku": {
                         "value": "[parameters('vmSeriesFirewallModel')]"
                     },
-                    "virtualNetworkExistingRGName": {
+                    "vnetrg": {
                         "value": "[parameters('virtualNetworkExistingRGName')]"
                     },
                     "imageVersion": { 
