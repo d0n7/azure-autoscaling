@@ -111,7 +111,7 @@
     },
     "variables": {
         "location": "[resourceGroup().location]",
-        "rgname": "[resourceGroup(vnetResourceGrpName).name]",
+        "rgname": "[parameters('vnetResourceGrpName')]",
         "vnetname": "[parameters('virtualNetworkName')]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('vnetname'))]",
         "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
