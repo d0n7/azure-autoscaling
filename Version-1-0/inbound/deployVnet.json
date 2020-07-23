@@ -13,13 +13,6 @@
                 "description": "VNET name"
             }
         },
-        "vnetResourceGrpName": {
-            "type": "string",
-            "defaultValue": "pstaj-autoscale-transit",
-            "metadata": {
-                "description": "VNET resource group name"
-            }
-        },
         "virtualNetworkAddressPrefix": {
             "type": "string",
             "defaultValue": "192.168.0.0/16",
@@ -104,7 +97,7 @@
     },
     "variables": {
         "location": "[resourceGroup().location]",
-        "rgname": "[parameters('vnetResourceGrpName')]",
+        "rgname": "[resourceGroup().name]",
         "vnetname": "[parameters('virtualNetworkName')]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('vnetname'))]",
         "subnet0Ref": "[concat(variables('vnetID'),'/subnets/',parameters('subnet0Name'))]",
