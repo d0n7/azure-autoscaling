@@ -35,7 +35,7 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultValue": "inbound-fw-vnet",
+            "defaultValue": "np-sdc-hub-vnet01",
             "metadata": {
                 "description": "Virtual Network Name of the VM-Series firewall VM Scale Set."
             }
@@ -224,10 +224,10 @@
         "namingInfix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "rgname" : "[resourceGroup().name]",
         "networkSecurityGroupName" : "[concat(variables('rgname'), '-mgmt-nsg-', variables('namingInfix'))]",
-        "MgmtSubnetName" : "[concat(parameters('virtualNetworkName'), '-mgmt-subnet')]",
-        "untrustedSubnetName" : "[concat(parameters('virtualNetworkName'), '-untrust-subnet')]",
-        "trustedSubnetName" : "[concat(parameters('virtualNetworkName'), '-trust-subnet')]",
-        "appGatewaySubnetName" : "[concat(parameters('virtualNetworkName'), '-appgw-subnet')]",
+        "MgmtSubnetName" : "[concat(parameters('np-sdc-hub-fwmgt-sub01')]",
+        "untrustedSubnetName" : "[concat(parameters('np-sdc-hub-fwpub-sub01')]",
+        "trustedSubnetName" : "[concat(parameters('np-sdc-hub-fwpri-sub01')]",
+        "appGatewaySubnetName" : "[concat(parameters('np-sdc-hub-appgw-sub01')]",
         "LoadBalancerType" : "layer-7",
         "firewallVmCount" : 2,
         "baseUrl" : "https://raw.githubusercontent.com/pstajewski/azure-autoscaling/master/Version-1-0/inbound",
