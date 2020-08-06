@@ -133,6 +133,7 @@
                     "addressPrefix": "[if(equals(parameters('subnet0Prefix'), 'None'), json('null'), parameters('subnet0Prefix'))]",
                     "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
+                    }
                     "routeTable": {
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udrName'))]"
                     }
@@ -144,7 +145,8 @@
                     "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet1Prefix'))]"
                     "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg2Name'))]"
-                    "routeTable": 
+            }
+                    "routeTable": {
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr2Name'))]"
                 }
             },
@@ -154,7 +156,8 @@
                     "addressPrefix": "[if(equals(parameters('subnet2Prefix'), 'None'), json('null'), parameters('subnet2Prefix'))]"
                     "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg3Name'))]"
-                    "routeTable": 
+            }
+                    "routeTable": {
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr3Name'))]"
                 }
             },
@@ -198,6 +201,7 @@
                 "addressPrefix": "[if(equals(parameters('subnet0Prefix'), 'None'), json('null'), parameters('subnet0Prefix'))]",
                 "networkSecurityGroup": {
                     "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
+                }
                 "routeTable": {
                     "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr2Name'))]"
                 }
@@ -213,6 +217,7 @@
                 "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet1Prefix'))]"
                 "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg2Name'))]"
+        }
                 "routeTable": {
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr2Name'))]"
             },
@@ -230,6 +235,7 @@
                 "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet2Prefix'))]"
                 "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg3Name'))]"
+            }
                 "routeTable": {
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr3Name'))]"
             },
