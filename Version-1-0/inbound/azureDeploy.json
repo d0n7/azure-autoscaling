@@ -223,7 +223,7 @@
         "location" : "[resourceGroup().location]",
         "namingInfix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "rgname" : "[resourceGroup().name]",
-        "networkSecurityGroupName" : "[concat(variables('rgname'), '-mgmt-nsg-', variables('namingInfix'))]",
+        "networkSecurityGroupName" : "!!! REPLACE ME WITH ACTUAL EXISTING NSG NAME !!",
         "MgmtSubnetName" : "np-sdc-hub-fwmgt-sub01",
         "untrustedSubnetName" : "np-sdc-hub-fwpub-sub01",
         "trustedSubnetName" : "np-sdc-hub-fwpri-sub01",
@@ -250,7 +250,7 @@
         "appGwBackendPoolName": "[concat(variables('rgname'), '_appGwBepool_', variables('namingInfix'))]",
         "fwLbBePoolName": "[concat(variables('rgname'), '_fw_lb_backend_pool_', variables('namingInfix'))]",
         "vmssName": "[concat('pan-fw-', variables('namingInfix'))]",
-        "udrName": "defaultBackendUDR",
+        "udrName": "!!! REPLACE ME WITH REAL NAME OF EXISTING UDR !!",
         "customDataField": "[concat('storage-account=', parameters('bootstrapStorageAccount'), ',access-key=', parameters('bootstrapStorageAccountAccessKey'), ',file-share=', parameters('bootstrapFileShare'),',share-directory=', parameters('bootstrapSharedDir'))]",
         "space": " "
     },
@@ -304,68 +304,12 @@
                 "parameters":  {}
             }
         },
-
-        {
-            "name": "SetupNSG",
-            "type": "Microsoft.Resources/deployments",
-            "resourceGroup": "[parameters('virtualNetworkExistingRGName')]",
-            "apiVersion": "2019-10-01",
-            "dependsOn": [
-                "Microsoft.Resources/deployments/PublishCustomMetrics"
-            ],
-            "properties": { 
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[variables('nsgURL')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "location": {
-                        "value": "[variables('location')]"
-                    },
-                    "nsgName": {
-                        "value": "[variables('networkSecurityGroupName')]"
-                    },
-                    "srcIPInboundNSG": {
-                        "value": "[parameters('networkSecurityGroupInboundSrcIP')]"
-                    },
-                    "virtualNetworkAddressPrefix": {
-                        "value": "[parameters('virtualNetworkAddressPrefix')]"
-                    }
-                }
-            }
-        },
-        {
-            "condition": "[equals(parameters('deployIntoExistingVnet'), 'No')]",
-            "name": "SetupDefaultUDR",
-            "type": "Microsoft.Resources/deployments",
-            "resourceGroup": "[parameters('virtualNetworkExistingRGName')]",
-            "apiVersion": "2019-10-01",
-            "dependsOn": [
-                "Microsoft.Resources/deployments/SetupNSG"
-            ],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[variables('defaultEmptyUdrSetupURL')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "udrName": {
-                        "value": "[variables('udrName')]"
-                    }
-                }
-            }
-        },
         {
             "name": "SetupVNET",
             "type": "Microsoft.Resources/deployments",
             "resourceGroup": "[parameters('virtualNetworkExistingRGName')]",
             "apiVersion": "2019-10-01",
-            "dependsOn": [
-                "Microsoft.Resources/deployments/SetupNSG",
-                "Microsoft.Resources/deployments/SetupDefaultUDR"
-            ],
+            "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
