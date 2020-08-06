@@ -35,7 +35,7 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-vnet01",
+            "defaultValue": "pstajewski-transit-vnet",
             "metadata": {
                 "description": "Virtual Network Name of the VM-Series firewall VM Scale Set."
             }
