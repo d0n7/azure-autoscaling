@@ -6,6 +6,14 @@
             "type": "string",
             "defaultValue": "nsg-default1"
         },
+            "nsg2Name": {
+            "type": "string",
+            "defaultValue": "nsg-default2"
+        },
+            "ns3gName": {
+            "type": "string",
+            "defaultValue": "nsg-default3"
+        },
         "virtualNetworkName": {
             "type": "string",
             "defaultValue": "vnet-FW",
@@ -78,7 +86,19 @@
         },
         "udrName": {
             "type": "string",
-            "defaultValue": "defaultBackendUDR",
+            "defaultValue": "np-sdc-hub-fwmgt-rt",
+            "metadata": {
+                "description": "Route Table Name"
+            }
+        "udr2Name": {
+            "type": "string",
+            "defaultValue": "np-sdc-hub-fwpub-rt",
+            "metadata": {
+                "description": "Route Table Name"
+            }
+        "udr3Name": {
+            "type": "string",
+            "defaultValue": "np-sdc-hub-fwpri-rt",
             "metadata": {
                 "description": "Route Table Name"
             }
@@ -111,6 +131,8 @@
                     "addressPrefix": "[if(equals(parameters('subnet0Prefix'), 'None'), json('null'), parameters('subnet0Prefix'))]",
                     "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsgName'))]"
+                    "routeTable": {
+                            "id": "[resourceId('Microsoft.Network/routeTables', parameters('udrName'))]"
                     }
                 }
             },
@@ -118,12 +140,20 @@
                 "name": "[parameters('subnet1Name')]",
                 "properties": {
                     "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet1Prefix'))]"
+                    "networkSecurityGroup": {
+                            "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg2Name'))]"
+                    "routeTable": {
+                            "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr2Name'))]"
                 }
             },
             {
                 "name": "[parameters('subnet2Name')]",
                 "properties": {
                     "addressPrefix": "[if(equals(parameters('subnet2Prefix'), 'None'), json('null'), parameters('subnet2Prefix'))]"
+                    "networkSecurityGroup": {
+                            "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg3Name'))]"
+                    "routeTable": {
+                            "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr3Name'))]"
                 }
             },
             {
