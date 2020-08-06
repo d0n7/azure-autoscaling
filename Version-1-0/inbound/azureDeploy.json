@@ -223,7 +223,7 @@
         "location" : "[resourceGroup().location]",
         "namingInfix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "rgname" : "[resourceGroup().name]",
-        "networkSecurityGroupName" : "customer-nsg-test",
+        "networkSecurityGroupName" : "np-sdc-hub-fwmgt-sub01-nsg01",
         "MgmtSubnetName" : "np-sdc-hub-fwmgt-sub01",
         "untrustedSubnetName" : "np-sdc-hub-fwpub-sub01",
         "trustedSubnetName" : "np-sdc-hub-fwpri-sub01",
@@ -250,7 +250,7 @@
         "appGwBackendPoolName": "[concat(variables('rgname'), '_appGwBepool_', variables('namingInfix'))]",
         "fwLbBePoolName": "[concat(variables('rgname'), '_fw_lb_backend_pool_', variables('namingInfix'))]",
         "vmssName": "[concat('pan-fw-', variables('namingInfix'))]",
-        "udrName": "customer-udr-test",
+        "udrName": "np-sdc-hub-fwmgt-rt",
         "customDataField": "[concat('storage-account=', parameters('bootstrapStorageAccount'), ',access-key=', parameters('bootstrapStorageAccountAccessKey'), ',file-share=', parameters('bootstrapFileShare'),',share-directory=', parameters('bootstrapSharedDir'))]",
         "space": " "
     },
