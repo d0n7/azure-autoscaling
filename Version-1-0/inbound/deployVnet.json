@@ -144,7 +144,7 @@
                     "addressPrefix": "[if(equals(parameters('subnet1Prefix'), 'None'), json('null'), parameters('subnet1Prefix'))]"
                     "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg2Name'))]"
-                    "routeTable": {
+                    "routeTable": 
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr2Name'))]"
                 }
             },
@@ -154,7 +154,7 @@
                     "addressPrefix": "[if(equals(parameters('subnet2Prefix'), 'None'), json('null'), parameters('subnet2Prefix'))]"
                     "networkSecurityGroup": {
                             "id": "[resourceId('Microsoft.Network/networkSecurityGroups', parameters('nsg3Name'))]"
-                    "routeTable": {
+                    "routeTable": 
                             "id": "[resourceId('Microsoft.Network/routeTables', parameters('udr3Name'))]"
                 }
             },
