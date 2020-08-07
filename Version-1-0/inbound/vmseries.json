@@ -289,7 +289,6 @@
                                         "subnet": {
                                             "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', parameters('vnetrg'), '/providers/Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'), '/subnets/', parameters('subnetNameMgmt'))]"
                                         },
-                                        }
                                     }
                                 }]
                             }
