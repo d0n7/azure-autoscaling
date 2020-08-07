@@ -184,9 +184,9 @@
         "rgname": "[resourceGroup().id]",
         "namingInfix": "[substring(uniqueString(parameters('guidValue')), 0, 5)]",
         "autoscaleName": "[concat('autoscale', variables('namingInfix'))]",
-        "nicNameMgmt": "[concat('nicmgmt', variables('namingInfix'))]",
-        "nicNameUntrust": "[concat('nicuntrust', variables('namingInfix'))]",
-        "nicNameTrust": "[concat('nictrust', variables('namingInfix'))]",
+        "nicNameMgmt": "[concat('nic-mgmt-', variables('namingInfix'))]",
+        "nicNameUntrust": "[concat('nic-untrust-', variables('namingInfix'))]",
+        "nicNameTrust": "[concat('nic-trust-', variables('namingInfix'))]",
         "ipConfigNameuntrust": "[concat('ipconfiguntrust', variables('namingInfix'))]",
         "ipConfigNametrust": "[concat('ipconfigtrust', variables('namingInfix'))]",
         "ipConfigNamemgmt": "[concat('ipconfigmgmt', variables('namingInfix'))]",
@@ -289,11 +289,6 @@
                                         "subnet": {
                                             "id": "[concat('/subscriptions/', subscription().subscriptionId,'/resourceGroups/', parameters('vnetrg'), '/providers/Microsoft.Network/virtualNetworks/', parameters('virtualNetworkName'), '/subnets/', parameters('subnetNameMgmt'))]"
                                         },
-                                        "publicIPAddressConfiguration": {
-                                            "name": "pavm_pip",
-                                            "properties": {
-                                                "idleTimeoutInMinutes": 15
-                                            }
                                         }
                                     }
                                 }]
