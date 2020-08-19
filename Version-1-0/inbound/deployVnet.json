@@ -4,15 +4,15 @@
     "parameters": {
         "nsgName": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwmgt-sub01-nsg01"
+            "defaultValue": "dr-hub-fwmgt-sub01-nsg01"
         },
             "nsg2Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpub-sub01-nsg01"
+            "defaultValue": "dr-hub-fwpub-sub01-nsg01"
         },
             "nsg3Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpri-sub01-nsg01"
+            "defaultValue": "dr-hub-fwpri-sub01-nsg01"
         },
         "virtualNetworkName": {
             "type": "string",
@@ -86,23 +86,23 @@
         },
         "udrName": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwmgt-rt",
+            "defaultValue": "dr-hub-fwmgt-sub01-rt",
             "metadata": {
-                "description": "Route Table Name"
+                "description": "Management UDR Name"
             }
         },
         "udr2Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpub-rt",
+            "defaultValue": "dr-hub-fwpub-sub01-rt",
             "metadata": {
-                "description": "Route Table Name"
+                "description": "Untrust UDR Name"
             }
         },
         "udr3Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpri-rt",
+            "defaultValue": "dr-hub-fwpri-sub01-rt",
             "metadata": {
-                "description": "Route Table Name"
+                "description": "Trust UDR Name"
             }
         },
         "deployIntoExistingVnet": {
