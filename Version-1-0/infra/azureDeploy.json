@@ -47,7 +47,7 @@
         "functionAppName": "[parameters('panoramaPluginMessageHandlerName')]",
         "namingInfix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "hostingPlanName": "[concat(parameters('panoramaPluginMessageHandlerName'), '-plan')]",
-        "storageAccountName": "prdedcpaloegbtsr01",
+        "storageAccountName": "pstajewski01",
         "RootManageSharedAccessKey_name": "RootManageSharedAccessKey",
         "serviceBusApiVersion": "2014-09-01",
         "baseUrl" : "https://raw.githubusercontent.com/pstajewski/azure-autoscaling/master/Version-1-0/infra",
