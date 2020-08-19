@@ -227,7 +227,7 @@
         "MgmtSubnetName" : "hub-fwmgt-sub01",
         "untrustedSubnetName" : "hub-fwpub-sub01",
         "trustedSubnetName" : "hub-fwpri-sub01",
-        "appGatewaySubnetName" : "np-sdc-hub-appgw-sub01",
+        "appGatewaySubnetName" : "prd-sdc-hub-appgw-sub01",
         "LoadBalancerType" : "layer-7",
         "firewallVmCount" : 2,
         "baseUrl" : "https://raw.githubusercontent.com/pstajewski/azure-autoscaling/master/Version-1-0/inbound",
