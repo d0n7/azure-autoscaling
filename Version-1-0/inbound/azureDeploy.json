@@ -35,7 +35,7 @@
         },
         "virtualNetworkName": {
             "type": "string",
-            "defaultValue": "pstajewski-transit-vnet",
+            "defaultValue": "dr-sdc-hub-vnet01",
             "metadata": {
                 "description": "Virtual Network Name of the VM-Series firewall VM Scale Set."
             }
@@ -223,10 +223,10 @@
         "location" : "[resourceGroup().location]",
         "namingInfix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "rgname" : "[resourceGroup().name]",
-        "networkSecurityGroupName" : "np-sdc-hub-fwmgt-sub01-nsg01",
-        "MgmtSubnetName" : "np-sdc-hub-fwmgt-sub01",
-        "untrustedSubnetName" : "np-sdc-hub-fwpub-sub01",
-        "trustedSubnetName" : "np-sdc-hub-fwpri-sub01",
+        "networkSecurityGroupName" : "dr-hub-fwmgt-sub01-nsg01",
+        "MgmtSubnetName" : "hub-fwmgt-sub01",
+        "untrustedSubnetName" : "hub-fwpub-sub01",
+        "trustedSubnetName" : "hub-fwpri-sub01",
         "appGatewaySubnetName" : "np-sdc-hub-appgw-sub01",
         "LoadBalancerType" : "layer-7",
         "firewallVmCount" : 2,
@@ -250,7 +250,7 @@
         "appGwBackendPoolName": "[concat(variables('rgname'), '_appGwBepool_', variables('namingInfix'))]",
         "fwLbBePoolName": "[concat(variables('rgname'), '_fw_lb_backend_pool_', variables('namingInfix'))]",
         "vmssName": "[concat('pan-fw-', variables('namingInfix'))]",
-        "udrName": "np-sdc-hub-fwmgt-rt",
+        "udrName": "dr-hub-fwmgt-sub01-nsg01",
         "customDataField": "[concat('storage-account=', parameters('bootstrapStorageAccount'), ',access-key=', parameters('bootstrapStorageAccountAccessKey'), ',file-share=', parameters('bootstrapFileShare'),',share-directory=', parameters('bootstrapSharedDir'))]",
         "space": " "
     },
