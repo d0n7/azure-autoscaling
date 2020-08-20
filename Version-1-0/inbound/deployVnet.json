@@ -86,21 +86,21 @@
         },
         "udrName": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwmgt-sub01-rt",
+            "defaultValue": "np-sdc-hub-fwmgt-rt",
             "metadata": {
                 "description": "Management UDR Name"
             }
         },
         "udr2Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpub-sub01-rt",
+            "defaultValue": "np-sdc-hub-fwpub-rt",
             "metadata": {
                 "description": "Untrust UDR Name"
             }
         },
         "udr3Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpri-sub01-rt",
+            "defaultValue": "np-sdc-hub-fwpri-rt",
             "metadata": {
                 "description": "Trust UDR Name"
             }
