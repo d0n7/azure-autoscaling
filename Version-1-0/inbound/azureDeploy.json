@@ -223,7 +223,7 @@
         "location" : "[resourceGroup().location]",
         "namingInfix": "[substring(uniqueString(resourceGroup().id), 0, 5)]",
         "rgname" : "[resourceGroup().name]",
-        "networkSecurityGroupName" : "np-sdc-hub-fwmgt-sub01",
+        "networkSecurityGroupName" : "np-sdc-hub-fwmgt-sub01-nsg01",
         "MgmtSubnetName" : "np-sdc-hub-fwmgt-sub01",
         "untrustedSubnetName" : "np-sdc-hub-fwpub-sub01",
         "trustedSubnetName" : "np-sdc-hub-fwpri-sub01",
