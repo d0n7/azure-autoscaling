@@ -250,7 +250,7 @@
         "appGwBackendPoolName": "[concat(variables('rgname'), '_appGwBepool_', variables('namingInfix'))]",
         "fwLbBePoolName": "[concat(variables('rgname'), '_fw_lb_backend_pool_', variables('namingInfix'))]",
         "vmssName": "[concat('npsdcegfw-', variables('namingInfix'))]",
-        "udrName": "np-sdc-hub-fwmgt-sub01-rt",
+        "udrName": "np-sdc-hub-fwmgt-rt",
         "customDataField": "[concat('storage-account=', parameters('bootstrapStorageAccount'), ',access-key=', parameters('bootstrapStorageAccountAccessKey'), ',file-share=', parameters('bootstrapFileShare'),',share-directory=', parameters('bootstrapSharedDir'))]",
         "space": " "
     },
