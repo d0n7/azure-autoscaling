@@ -4,15 +4,15 @@
     "parameters": {
         "nsgName": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwmgt-sub01-nsg01"
+            "defaultValue": "prd-hub-fwmgt-sub01-nsg01"
         },
             "nsg2Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpub-sub01-nsg01"
+            "defaultValue": "prd-hub-fwpub-sub01-nsg01"
         },
             "nsg3Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpri-sub01-nsg01"
+            "defaultValue": "prd-hub-fwpri-sub01-nsg01"
         },
         "virtualNetworkName": {
             "type": "string",
@@ -86,21 +86,21 @@
         },
         "udrName": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwmgt-rt",
+            "defaultValue": "prd-hub-fwmgt-sub01-rt",
             "metadata": {
                 "description": "Management UDR Name"
             }
         },
         "udr2Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpub-rt",
+            "defaultValue": "prd-hub-fwpub-sub01-rt",
             "metadata": {
                 "description": "Untrust UDR Name"
             }
         },
         "udr3Name": {
             "type": "string",
-            "defaultValue": "np-sdc-hub-fwpri-rt",
+            "defaultValue": "prd-hub-fwpri-sub01-rt",
             "metadata": {
                 "description": "Trust UDR Name"
             }
