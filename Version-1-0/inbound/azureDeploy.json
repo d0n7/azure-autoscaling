@@ -249,7 +249,7 @@
         "fwLbName": "[concat(variables('rgname'), '_fw_lb_', variables('namingInfix'))]", 
         "appGwBackendPoolName": "[concat(variables('rgname'), '_appGwBepool_', variables('namingInfix'))]",
         "fwLbBePoolName": "[concat(variables('rgname'), '_fw_lb_backend_pool_', variables('namingInfix'))]",
-        "vmssName": "[concat('prdsdcigfw-', variables('namingInfix'))]",
+        "vmssName": "[concat('prdsdcegfw-', variables('namingInfix'))]",
         "udrName": "dr-hub-fwmgt-sub01-rt",
         "customDataField": "[concat('storage-account=', parameters('bootstrapStorageAccount'), ',access-key=', parameters('bootstrapStorageAccountAccessKey'), ',file-share=', parameters('bootstrapFileShare'),',share-directory=', parameters('bootstrapSharedDir'))]",
         "space": " "
